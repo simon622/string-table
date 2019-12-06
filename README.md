@@ -1,6 +1,7 @@
 # String-Table
-Lightweight Java framework to allow quick rendering of tabulated data in various output formats.
-Great for debugging and quickly visualising data for logging or reporting.
+Lightweight Java framework to allow quick rendering of tabulated data.
+Great for debugging and quickly visualising data for logging or reporting. 
+Supports automatic column size detection, advanced sort, rollup and mutliple output formats.
 
 ## Recent changes
 * 2018 - Added support for ResultSet reading into StringTable

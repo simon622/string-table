@@ -5,7 +5,7 @@ Supports automatic column size detection, advanced sort, rollup and multiple out
 
 ## Recent changes
 * 2018 - Added support for ResultSet reading into StringTable
-* 2019 - Added support for data sorting by Lexical and Numeric orders.
+* 2019 - Added support for data sorting by Lexical and Numeric types.
 * 2019 - Added support for HTML output
 
 Inbuilt support for the following export formats;

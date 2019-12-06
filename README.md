@@ -3,6 +3,7 @@ Java based framework to allow quick rendering of tabulated data in various outpu
 Great for debugging and quickly visualising data for logging or reporting.
 
 ## Recent changes
+* 2018 - Added support for ResultSet reading into StringTable
 * 2019 - Added support for data sorting by Lexical and Numeric orders.
 * 2019 - Added support for HTML output
 
@@ -11,7 +12,7 @@ Inbuilt support for the following export formats;
 * CSV
 * HTML
 
-## Example use
+## Simple example
 
 ```java
   StringTable st = new StringTable("First Column", "Second Column", "Third Column");
@@ -19,6 +20,14 @@ Inbuilt support for the following export formats;
     st.addRow(i, i, i);
   }
   System.out.println(StringTableWriters.writeStringTableAsASCII(st));
+```
+
+## Database example
+
+```java
+  ResultSet rs = ...
+  StringTable st = StringTableDatabaseUtils.getStringTable(rs);
+  System.out.println(StringTableWriters.writeStringTableAsHTML(st));
 ```
 
 ### Export as ASCII

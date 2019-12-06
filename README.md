@@ -26,7 +26,7 @@ Inbuilt support for the following export formats;
 
 ```java
   ResultSet rs = ...
-  StringTable st = StringTableDatabaseUtils.getStringTable(rs);
+  StringTable st = StringTableDatabaseUtils.readStringTable(rs);
   System.out.println(StringTableWriters.writeStringTableAsHTML(st));
 ```
 

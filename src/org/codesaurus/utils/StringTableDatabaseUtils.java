@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class StringTableDatabaseUtils {
 
-    public static StringTable getStringTable(ResultSet rs) throws SQLException{
+    public static StringTable readStringTable(ResultSet rs) throws SQLException{
 
         StringTable resultsTable = null;
         ResultSetMetaData metadata = rs.getMetaData();

@@ -7,9 +7,9 @@ Great for debugging and quickly visualising data for logging or reporting.
 * 2019 - Added support for HTML output
 
 Inbuilt support for the following export formats;
-* ASCII Table
+* ASCII
 * CSV
-* HTML Table
+* HTML
 
 ## Example use
 

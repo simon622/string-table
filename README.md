@@ -1,5 +1,5 @@
 # String-Table
-Java based framework to allow quick rendering of tabulated data in various output formats.
+Lightweight Java framework to allow quick rendering of tabulated data in various output formats.
 Great for debugging and quickly visualising data for logging or reporting.
 
 ## Recent changes

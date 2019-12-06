@@ -62,6 +62,10 @@ public class StringTable {
     public StringTable() {
     }
 
+    /**
+     * Construct a StringTable with defined table headings
+     * @param headings
+     */
     public StringTable(String...headings){
         this(null, headings);
     }
@@ -101,14 +105,27 @@ public class StringTable {
         return footer;
     }
 
+    /**
+     * Show a row index column being output during rendering phase
+     * @default hidden
+     */
     public void showRowIndex(){
         rowIndexAdded = true;
     }
 
+    /**
+     * Hide the row index column
+     */
     public void hideRowIndex(){
         rowIndexAdded = false;
     }
 
+    /**
+     * Apply natural sort on the column index specified.
+     * Where the data contains only numeric data it will use natural numeric sort
+     * @param colIdx - Zero indexed value to determine which column to sort by
+     * @param reverse - Should the sort direct be natural order reversed
+     */
     public synchronized void sort(final int colIdx, boolean reverse) {
         Comparator<String[]> wrapper = new Comparator<String[]>() {
             public int compare(String[] o1, String[] o2) {
@@ -121,6 +138,12 @@ public class StringTable {
         rows.sort(reverse ? wrapper.reversed() : wrapper);
     }
 
+    /**
+     * Set the comparator for a given column index allowing full control
+     * of data sorting
+     * @param colIdx - Zero indexed value to determine which column to assign comparator to
+     * @param c - your custom comparator
+     */
     public void addColumnComparator(int colIdx, Comparator<String> c){
         COLUMN_SORTERS.put(colIdx, c);
     }
@@ -133,6 +156,9 @@ public class StringTable {
         return c;
     }
 
+    /**
+     * Add data to the rollup (footer) of the table
+     */
     public synchronized void addFooter(String... row){
         if(row == null || row.length == 0) return;
         this.footer = new ArrayList<String>(row.length);
@@ -158,6 +184,9 @@ public class StringTable {
         }
     }
 
+    /**
+     * Merge data from other tables into this table
+     */
     public void combine(StringTable... tables){
         if(tables != null){
             for (StringTable stringTable : tables) {
@@ -186,6 +215,9 @@ public class StringTable {
         return arr;
     }
 
+    /**
+     * Add a row separator into your table data
+     */
     public void addSeparator(){
         rows.add(null);
     }
@@ -198,12 +230,18 @@ public class StringTable {
         return table.getHeadings().get(idx);
     }
 
+    /**
+     * returns the number of columns in the given table
+     */
     public static int getColumnCount(StringTable table){
         int count = table.getHeadings().size();
         if(table.rowIndexAdded) count++;
         return count;
     }
 
+    /**
+     * returns the number of rows in the given table
+     */
     public static int size(StringTable table){
         return table.getRows().size();
     }

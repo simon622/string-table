@@ -36,7 +36,7 @@ public class StringTableDatabaseUtils {
                                           int columnCount) throws SQLException {
         ArrayList<String> headersList = new ArrayList<String>();
         for (int i = 1; i < columnCount + 1; i++)
-            headersList.add(metadata.getColumnName(i));
+            headersList.add(metadata.getColumnLabel(i));
         return headersList.toArray(new String[headersList.size()]);
     }
 }
